@@ -11,7 +11,7 @@ Container customTextFieldShadow({
         boxShadow: [
           BoxShadow(
             color: Color(0xffdedede),
-            spreadRadius: 4,
+            spreadRadius: 0,
             blurRadius: 2,
             offset: Offset(0, 3),
           ),
