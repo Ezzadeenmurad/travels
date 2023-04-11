@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../widgets/custom_Container.dart';
 import '../widgets/custom_text_form_shadw.dart';
 import '../widgets/custombutton.dart';
+import 'password_recovery.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -45,7 +46,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
-                      onTap: (() {}),
+                      onTap: (() {
+                        passwordRecovery(context: context);
+                      }),
                       child: const Text(
                         "نسيت كلمة المرور",
                         style: TextStyle(
