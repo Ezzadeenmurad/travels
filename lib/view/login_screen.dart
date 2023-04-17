@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/custom_Container.dart';
-import '../widgets/custom_text_form_shadw.dart';
+import '../widgets/custom_dialog/custom_password_recovery.dart';
+import '../widgets/custom_text_form.dart';
 import '../widgets/custombutton.dart';
-import 'password_recovery.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
