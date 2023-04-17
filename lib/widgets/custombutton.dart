@@ -17,7 +17,7 @@ class TypeButton {
         text,
         style: TextStyle(
           color: textColor,
-          fontSize: 16,
+          fontSize: 20,
         ),
         textAlign: textAlign,
       ),
