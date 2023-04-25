@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controller/Search_controller.dart';
+import '../../controllers/Search_controller.dart';
 
 class CityName extends StatelessWidget {
   final SearchController controller = Get.put(SearchController());
@@ -37,7 +37,7 @@ class CityName extends StatelessWidget {
                     TextField(
                       textAlign: TextAlign.end,
                       onChanged: (query) => controller.filter(query),
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'بحث',
                         hintStyle: TextStyle(
                           fontSize: 20,
@@ -46,7 +46,7 @@ class CityName extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Expanded(
                       child: 
                      Obx(() =>  ListView.separated(
@@ -56,7 +56,7 @@ class CityName extends StatelessWidget {
                             title: Text(
                               item,
                               textAlign: TextAlign.right,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -79,7 +79,7 @@ class CityName extends StatelessWidget {
                       children: [
                         TextButton(
                           onPressed: () => Get.back(),
-                          child: Text(
+                          child: const Text(
                             'اغلاق',
                             style: TextStyle(color: Colors.red, fontSize: 20),
                           ),
