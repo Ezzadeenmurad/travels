@@ -4,7 +4,7 @@ Container customTextFieldShadow({
   required String hint,
 }) =>
     Container(
-      height: 50,
+      height: 40,
       decoration: const BoxDecoration(
         color: Color.fromARGB(255, 255, 255, 255),
         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -20,26 +20,30 @@ Container customTextFieldShadow({
       padding: const EdgeInsets.only(top: 16, right: 12),
       child: customTextFiled(
         text: hint,
-        style: const TextStyle(fontSize: 25, color: Colors.grey),
+        style: const TextStyle(fontSize: 18, color: Colors.grey),
       ),
     );
 
 TextFormField customTextFiled(
-        {required text,
+        {required String text,
         TextStyle? style,
-        Icon? icon,
-        Function()? onTap,
+        TextAlign textAlign = TextAlign.end,
+        Widget? suffixIcon,
+        Widget? prefixIcon,
+        void Function()? onTap,
         bool readOnly = false,
         TextEditingController? controller}) =>
     TextFormField(
       style: style,
       readOnly: readOnly,
       controller: controller,
-      textAlign: TextAlign.end,
+      textAlign: textAlign,
       decoration: InputDecoration(
         border: InputBorder.none,
         hintText: text,
-        suffixIcon: icon,
+        hintStyle: style,
+        suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
       ),
       onTap: onTap,
     );

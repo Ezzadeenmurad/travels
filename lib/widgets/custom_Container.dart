@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 Container customContainer({
@@ -5,13 +6,16 @@ Container customContainer({
   Color? containerColor,
   double? width,
   double? height,
+  EdgeInsetsGeometry? margin = const EdgeInsets.only(top: 10),
+  BoxBorder? border,
 }) =>
     Container(
         decoration: BoxDecoration(
+          border: border,
           color: containerColor,
           borderRadius: const BorderRadius.all(Radius.circular(6)),
         ),
-        margin: const EdgeInsets.only(top: 10),
+        margin: margin,
         width: width,
         height: height,
         child: child);
