@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import '../controllers/check_box_controller.dart';
 import '../controllers/show_city_controller.dart';
 import '../widgets/custom_text.dart';
-
 import '../widgets/custom_trips.dart';
 import '../controllers/date_controller.dart';
 import '../trip_data.dart';
@@ -23,17 +23,27 @@ class _HomeScreenState extends State<HomeScreen> {
   final DatePickerController dateController = Get.find();
   final ShowCityController showCityControl = Get.find();
   final CheckBoxController checkBoxController = Get.find();
-  bool check = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 247, 245, 245),
-      appBar: AppBar(
-        backgroundColor: Colors.red,
-      ),
       body: CustomScrollView(
         physics: const ClampingScrollPhysics(),
         slivers: [
+          const SliverAppBar(
+            floating: true,
+            snap: true,
+            pinned: true,
+            leading: Icon(
+              Icons.notifications,
+              size: 35,
+            ),
+            title: Align(
+                alignment: Alignment.centerRight, child: Text('الرئيسية')),
+            expandedHeight: 60,
+            backgroundColor: Colors.red,
+          ),
           SliverList(
               delegate: SliverChildListDelegate([
             Column(
