@@ -1,135 +1,136 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../widgets/custom_Container.dart';
+import '../controllers/check_box_controller.dart';
+import '../core/utils/assets_manger.dart';
 import '../widgets/custom_dialog/custom_password_recovery.dart';
-import '../widgets/custom_text_form.dart';
-import '../widgets/custombutton.dart';
+import '../widgets/custom_text.dart';
 
-class LoginScreen extends StatefulWidget {
+import '../widgets/custom_text_form.dart';
+import '../widgets/custom_button.dart';
+
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
+  // final CheckBoxController checkBoxController = Get.find();
 
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
-      body: Padding(
-        padding: const EdgeInsets.only(right: 40, left: 40),
-        child: Column(
-          children: [
-            Image.asset('assets/images/mrt7al.jpg'),
-            const Text(
-              'تسجيل الدخول',
-              style: TextStyle(
-                fontSize: 25,
-              ),
-            ),
-            const SizedBox(
-              height: 25,
-            ),
-            Column(
+      body: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 30, left: 30),
+            child: Column(
               children: [
-                customTextFieldShadow(hint: "ادخل رقم الجوال"),
+                Container(
+                    decoration: const BoxDecoration(
+                        border: Border(
+                            bottom:
+                                BorderSide(color: Colors.grey, width: 0.5))),
+                    child: Image.asset(ImgAssets.loginBus, height: 165)),
                 const SizedBox(
-                  height: 15,
+                  height: 25,
                 ),
-                customTextFieldShadow(hint: "كلمة المرور"),
-                const SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
                   children: [
-                    InkWell(
-                      onTap: (() {
-                        passwordRecovery(context: context);
-                      }),
-                      child: const Text(
-                        "نسيت كلمة المرور",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                    const Text(
+                      'تسجيل الدخول',
+                      style: TextStyle(fontSize: 25, color: Colors.red),
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    customTextFieldShadow(hint: "ادخل رقم الجوال"),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    customTextFieldShadow(hint: "كلمة المرور"),
+                    const SizedBox(
+                      height: 13,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          "تذكرني",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Checkbox(
-                          value: false,
-                          onChanged: (value) {},
+                        InkWell(
+                            onTap: (() {
+                              Get.dialog<String>(const PasswordRecovery(),
+                                  barrierDismissible: false);
+                            }),
+                            child: customText18(text: "نسيت كلمة المرور")),
+                        Row(
+                          children: [
+                            customText18(text: "تذكرني"),
+                            // Obx(
+                            //   () =>
+                            //  Checkbox(
+                            // checkColor: Colors.white,
+                            // activeColor: Colors.red,
+                            // value: checkBoxController.isRemember.value,
+                            // onChanged: (value) {
+                            // checkBoxController.isRememberCheck(value);
+                            //   },
+                            // ),
+                            // ),
+                          ],
                         ),
                       ],
                     ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: (() {}),
-                      child: const Text(
-                        "انشاء حساب جديد",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold),
-                      ),
+                    const SizedBox(
+                      height: 7,
+                    ),
+                    Row(
+                      children: [
+                        InkWell(
+                          onTap: (() {}),
+                          child: const Expanded(
+                            child: Text(
+                              "انشاء حساب جديد",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                        const Expanded(
+                          child: Text(
+                            'ليس لديك حساب ؟',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(
-                      width: 8,
+                      height: 5,
                     ),
-                    const Text(
-                      'ليس لديك حساب ؟',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
+                    TypeButton.elevatedButton(
+                      onPressed: () {},
+                      child: customText18(text: "دخول"),
+                      buttonColor: const Color(0xffff474f),
+                      minimumSize: const Size(double.infinity, 45),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    TypeButton.outlinedButton(
+                      onPressed: () {},
+                      child: customText18(text: "تخطي"),
+                      textColor: Colors.blue,
+                      minimumSize: const Size(double.infinity, 45),
+                      side: const BorderSide(width: 1.5, color: Colors.blue),
                     ),
                   ],
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                customContainer(
-                  child: TypeButton.elevatedButton(
-                    onPressed: () {},
-                    text: "دخول",
-                    buttonColor: Color(0xffff474f),
-                  ),
-                  containerColor: Colors.white,
-                  width: double.infinity,
-                  height: 60,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                customContainer(
-                  child: TypeButton.outlinedButton(
-                    onPressed: () {},
-                    text: "تخطي",
-                  ),
-                  height: 60,
-                  width: double.infinity,
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
