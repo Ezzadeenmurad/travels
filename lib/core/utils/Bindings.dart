@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:get/get.dart';
 
 import '../../controllers/Search_controller.dart';
@@ -10,7 +12,7 @@ class MyBindings implements Bindings {
   void dependencies() {
     Get.lazyPut(() => DatePickerController());
     Get.lazyPut(() => ShowCityController());
-    Get.lazyPut(() => SearchController());
+    Get.lazyPut(() => SearchController(),fenix: true);
     Get.put(CheckBoxController(),permanent: true);
   }
 }
