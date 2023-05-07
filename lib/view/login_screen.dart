@@ -9,10 +9,15 @@ import '../widgets/custom_text.dart';
 import '../widgets/custom_text_form.dart';
 import '../widgets/custom_button.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  LoginScreen({super.key});
 
-  // final CheckBoxController checkBoxController = Get.find();
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final CheckBoxController checkBoxController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -63,17 +68,16 @@ class LoginScreen extends StatelessWidget {
                         Row(
                           children: [
                             customText18(text: "تذكرني"),
-                            // Obx(
-                            //   () =>
-                            //  Checkbox(
-                            // checkColor: Colors.white,
-                            // activeColor: Colors.red,
-                            // value: checkBoxController.isRemember.value,
-                            // onChanged: (value) {
-                            // checkBoxController.isRememberCheck(value);
-                            //   },
-                            // ),
-                            // ),
+                            Obx(
+                              () => Checkbox(
+                                checkColor: Colors.white,
+                                activeColor: Colors.red,
+                                value: checkBoxController.isRemember.value,
+                                onChanged: (value) {
+                                  checkBoxController.isRememberCheck(value);
+                                },
+                              ),
+                            ),
                           ],
                         ),
                       ],
