@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import '../../controllers/Search_controller.dart';
 
 class CityName extends StatelessWidget {
-  final SearchController controller = Get.put(SearchController());
-
+ 
+  final SearchController searchController = Get.find();
   CityName({super.key});
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class CityName extends StatelessWidget {
 
                     TextField(
                       textAlign: TextAlign.end,
-                      onChanged: (query) => controller.filter(query),
+                      onChanged: (query) => searchController.filter(query),
                       decoration: const InputDecoration(
                         hintText: 'بحث',
                         hintStyle: TextStyle(
@@ -48,10 +48,10 @@ class CityName extends StatelessWidget {
 
                     const SizedBox(height: 16),
                     Expanded(
-                      child: 
-                     Obx(() =>  ListView.separated(
+                        child: Obx(
+                      () => ListView.separated(
                         itemBuilder: (context, index) {
-                          final item = controller.filteredItems[index];
+                          final item = searchController.filteredItems[index];
                           return ListTile(
                             title: Text(
                               item,
@@ -69,9 +69,9 @@ class CityName extends StatelessWidget {
                           height: 1.0,
                           color: Colors.grey[400],
                         ),
-                        itemCount: controller.filteredItems.length,
-                      ),)
-                    ),
+                        itemCount: searchController.filteredItems.length,
+                      ),
+                    )),
 
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
