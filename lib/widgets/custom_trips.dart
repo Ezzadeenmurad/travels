@@ -194,7 +194,7 @@ class CustomeTrip extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                customText(text: transportType, color: Colors.red),
+                customText(text: '$transportType نوع النقل', color: Colors.red),
                 const SizedBox(
                   width: 100,
                 ),

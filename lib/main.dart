@@ -4,7 +4,3 @@ import 'package:travels/app.dart';
 void main() {
   runApp(const Travels());
 }
-
-
-
-
