@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/check_box_controller.dart';
 import '../controllers/show_city_controller.dart';
+import '../data.dart';
+import '../widgets/custom_bottom.dart';
 import '../widgets/custom_text.dart';
 import '../widgets/custom_trips.dart';
 import '../controllers/date_controller.dart';
-import '../trip_data.dart';
+
 import '../widgets/custom_Container.dart';
 
 import '../widgets/custom_text_form.dart';
@@ -234,6 +236,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ])),
         ],
       ),
+            bottomNavigationBar: curvedNavigationBar()
     );
   }
 }
