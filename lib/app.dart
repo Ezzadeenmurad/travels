@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 
 import '../core/utils/Bindings.dart';
 
-import 'view/home_screen.dart';
-import 'view/login_screen.dart';
+
+import 'widgets/home_layout.dart';
 
 class Travels extends StatelessWidget {
   const Travels({super.key});
@@ -14,7 +14,7 @@ class Travels extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home:HomeScreen (),
+      home:HomeLayout (),
       initialBinding: MyBindings(),
     );
   }
