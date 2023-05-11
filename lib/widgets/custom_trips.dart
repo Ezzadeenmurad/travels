@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../core/utils/hex_color.dart';
+import '../core/utils/app_color.dart';
 import '../widgets/custom_Container.dart';
 
 import 'custom_button.dart';
@@ -126,11 +126,11 @@ class CustomeTrip extends StatelessWidget {
                   child: Column(
                     children: [
                       customText(
-                          text: 'موعد الانطلاق', color: HexColor.hexColor),
+                          text: 'موعد الانطلاق', color: AppColor.hexColor),
                       customTextSize20(
-                          text: startingTime, color: HexColor.hexColor),
+                          text: startingTime, color: AppColor.hexColor),
                       customText18(text: ' الى مدينة', color: Colors.red),
-                      customText18(text: toCity, color: HexColor.hexColor),
+                      customText18(text: toCity, color: AppColor.hexColor),
                     ],
                   ),
                 ),
@@ -140,7 +140,7 @@ class CustomeTrip extends StatelessWidget {
                     children: [
                       customText(
                           text: 'مدة الانتظار بالساعات ',
-                          color: HexColor.hexColor),
+                          color: AppColor.hexColor),
                       Row(
                         children: [
                           const Expanded(
@@ -179,11 +179,11 @@ class CustomeTrip extends StatelessWidget {
                   child: Column(
                     children: [
                       customText(
-                          text: 'موعد الحضور ', color: HexColor.hexColor),
+                          text: 'موعد الحضور ', color: AppColor.hexColor),
                       customTextSize20(
-                          text: attendanceTime, color: HexColor.hexColor),
+                          text: attendanceTime, color: AppColor.hexColor),
                       customText18(text: ' من مدينة', color: Colors.red),
-                      customText18(text: formCity, color: HexColor.hexColor),
+                      customText18(text: formCity, color: AppColor.hexColor),
                     ],
                   ),
                 ),
@@ -210,9 +210,9 @@ class CustomeTrip extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                customTextSize20(text: '$price', color: HexColor.hexColor),
+                customTextSize20(text: '$price', color: AppColor.hexColor),
                 customTextSize20(
-                    text: '  سعر الرحلة', color: HexColor.hexColor),
+                    text: '  سعر الرحلة', color: AppColor.hexColor),
                 const SizedBox(
                   width: 23,
                 ),

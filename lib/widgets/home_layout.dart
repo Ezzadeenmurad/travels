@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:travels/view/add_traveler.dart';
 import 'package:travels/view/home_screen.dart';
-import 'package:travels/view/login_screen.dart';
 
 class HomeLayout extends StatefulWidget {
   const HomeLayout({super.key});
@@ -14,7 +13,6 @@ class HomeLayout extends StatefulWidget {
 class _HomeLayoutState extends State<HomeLayout> {
   int currentIndex = 0;
   List<Widget> screens = [
-    
     const NewTravel(),
     const HomeScreen(),
   ];

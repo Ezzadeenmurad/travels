@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../controllers/check_box_controller.dart';
 import '../controllers/show_city_controller.dart';
 import '../data.dart';
-import '../widgets/custom_bottom.dart';
+
 import '../widgets/custom_text.dart';
 import '../widgets/custom_trips.dart';
 import '../controllers/date_controller.dart';
@@ -13,6 +13,7 @@ import '../widgets/custom_Container.dart';
 
 import '../widgets/custom_text_form.dart';
 import '../widgets/custom_button.dart';
+import 'notifications.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,15 +34,17 @@ class _HomeScreenState extends State<HomeScreen> {
       body: CustomScrollView(
         physics: const ClampingScrollPhysics(),
         slivers: [
-          const SliverAppBar(
+          SliverAppBar(
             floating: true,
             snap: true,
             pinned: true,
-            leading: Icon(
-              Icons.notifications,
-              size: 35,
+            leading: IconButton(
+              onPressed: () {
+                Get.to(() => const Notifications());
+              },
+              icon: const Icon(Icons.notifications),
             ),
-            title: Align(
+            title: const Align(
                 alignment: Alignment.centerRight, child: Text('الرئيسية')),
             expandedHeight: 60,
             backgroundColor: Colors.red,
@@ -236,7 +239,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ])),
         ],
       ),
-            bottomNavigationBar: curvedNavigationBar()
     );
   }
 }
