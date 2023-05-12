@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
             pinned: true,
             leading: IconButton(
               onPressed: () {
-                Get.to(() => const Notifications());
+                Get.to(() =>  Notifications());
               },
               icon: const Icon(Icons.notifications),
             ),

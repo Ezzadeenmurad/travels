@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../widgets/custom_bottom.dart';
+
 import 'notifications.dart';
 
 class New_Travel extends StatelessWidget{
@@ -106,7 +106,7 @@ class New_Travel extends StatelessWidget{
           ),
         ],
       ),
-      bottomNavigationBar: curvedNavigationBar(),
+
 
     );
 
