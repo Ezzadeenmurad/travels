@@ -6,16 +6,20 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-
 import 'notifications.dart';
 
-class My_booking extends StatefulWidget {
+
+
+
+class MyBooking extends StatefulWidget {
+    const MyBooking({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return mybook();
   }
 }
-class mybook extends State<My_booking>{
+class mybook extends State<MyBooking>{
 
 
 

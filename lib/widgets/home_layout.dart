@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:travels/view/add_traveler.dart';
 import 'package:travels/view/home_screen.dart';
 
+import '../view/my_booking.dart';
+
 class HomeLayout extends StatefulWidget {
   const HomeLayout({super.key});
 
@@ -13,8 +15,9 @@ class HomeLayout extends StatefulWidget {
 class _HomeLayoutState extends State<HomeLayout> {
   int currentIndex = 0;
   List<Widget> screens = [
-     New_Travel(),
+  
     const HomeScreen(),
+    const MyBooking(),
   ];
   @override
   Widget build(BuildContext context) {

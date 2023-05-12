@@ -6,10 +6,11 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-
 import 'notifications.dart';
 
-class New_Travel extends StatelessWidget{
+
+class NewTravel extends StatelessWidget{
+  const NewTravel({super.key});
   @override
   Widget build(BuildContext context) {
 
