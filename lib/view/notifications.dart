@@ -8,6 +8,7 @@ import 'package:get/get_core/src/get_main.dart';
 
 
 class Notifications extends StatefulWidget {
+   const Notifications({super.key});
   @override
   State<StatefulWidget> createState() {
     return mybook();
