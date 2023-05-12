@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:travels/BusesBus/Splach_screen.dart';
 
 
 import '../core/utils/Bindings.dart';
@@ -14,7 +15,7 @@ class Travels extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home:HomeLayout (),
+      home:Splachscreen (),
       initialBinding: MyBindings(),
     );
   }
